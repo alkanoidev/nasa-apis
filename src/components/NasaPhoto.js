@@ -29,7 +29,7 @@ export default function NasaPhoto() {
         return;
       }
       const res = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${startDate}`
+        `https://api.nasa.gov/planetary/apod?api_key=9fie4latBvEoOJmV3CMHM4aVQ4UZHCVr44TcvGSY&date=${startDate}`
       );
       const data = await res.json();
       setPhotoData(data);
