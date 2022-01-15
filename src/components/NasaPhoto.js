@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
+import { ReactComponent as Loader } from "./loader.svg";
 
 const formatDate = (date) => {
   let d = new Date(date),
@@ -16,8 +17,10 @@ const formatDate = (date) => {
 export default function NasaPhoto() {
   const [photoData, setPhotoData] = useState(null);
   const [startDate, setStartDate] = useState(formatDate(new Date()));
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetchPhoto();
 
     async function fetchPhoto() {
@@ -26,11 +29,19 @@ export default function NasaPhoto() {
         setStartDate(formatDate(new Date()));
         return;
       }
-      const res = await fetch(
+      // const res = await fetch(
+      //   `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${startDate}`
+      // );
+      fetch(
         `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${startDate}`
-      );
-      const data = await res.json();
-      setPhotoData(data);
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setPhotoData(data);
+          setLoading(false);
+        });
+      // const data = await res.json();
+      // setPhotoData(data);
     }
   }, [startDate]);
 
@@ -40,25 +51,35 @@ export default function NasaPhoto() {
     <>
       <NavBar startDate={startDate} setStartDate={setStartDate} />
       <div className="nasa-photo">
-        {photoData.media_type === "image" ? (
-          <img src={photoData.url} alt={photoData.title} className="photo" />
+        {loading ? (
+          <Loader id="svg" />
         ) : (
-          <iframe
-            title="space-video"
-            src={photoData.url}
-            frameBorder="0"
-            gesture="media"
-            allow="encrypted-media"
-            allowFullScreen
-            className="photo"
-          />
-        )}
+          <>
+            {photoData.media_type === "image" ? (
+              <img
+                src={photoData.url}
+                alt={photoData.title}
+                className="photo"
+              />
+            ) : (
+              <iframe
+                title="space-video"
+                src={photoData.url}
+                frameBorder="0"
+                gesture="media"
+                allow="encrypted-media"
+                allowFullScreen
+                className="photo"
+              />
+            )}
 
-        <div>
-          <h1>{photoData.title}</h1>
-          <p className="date">{photoData.date}</p>
-          <p className="explanation">{photoData.explanation}</p>
-        </div>
+            <div>
+              <h1>{photoData.title}</h1>
+              <p className="date">{photoData.date}</p>
+              <p className="explanation">{photoData.explanation}</p>
+            </div>
+          </>
+        )}
       </div>
     </>
   );

@@ -11,7 +11,7 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
-.app{
+.app {
   color: #d14f4f;
   line-height: 1.7;
   font-size: 19px;
@@ -39,7 +39,9 @@ body::-webkit-scrollbar {
 .nasa-photo {
   display: flex;
   padding: 40px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  align-items: center;
+  justify-content: center;
   max-height: 100%;
 }
 
@@ -101,4 +103,19 @@ body::-webkit-scrollbar {
 }
 .photo {
   border-radius: 20px;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#svg {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
 }
