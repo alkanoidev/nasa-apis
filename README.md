@@ -1,6 +1,38 @@
-# nasa-apod
+# nasa-apis
+## Overview:
+<font size="3">Explore NASA apis such as Picture Of the Day, Mars Rover Photos and NASA Image and Video Library. 🚀 </font>
 
-## Getting Started with Create React App
+## Features:
+### Picture Of The Day:
+- Get NASA's space picture(or video) of the day with its description.
+- Select Dates in the history to view picture of the day.
+### Mars Rover Photos: 
+- View images and data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars.
+- Filter the images by cameras, rovers, sol.
+- Images are separated into easily navigatable pages.
+### NASA Image and Video Library:
+- Search for keywords from NASAs Image And Video Library.
+- Enter for submitting the search input is supported.
+- Navigate between pages.
+
+## Tech:
+- Reactjs
+- React-Router
+- Styled-Components
+- React-Icons
+- Fetch API
+- Async/Await
+## Screenshots:
+![failed to load](./page1.jpeg)
+![failed to load](./page2.jpeg)
+![failed to load](./page3.jpeg)
+![failed to load](./page4.jpeg)
+
+## Contact:
+- Filip Ivanovic
+- Email: alkanoidev@gmail.com 
+
+## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -30,13 +62,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
