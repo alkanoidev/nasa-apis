@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.fa364525.css",
-    "main.js": "/static/js/main.9a96cb9c.js",
-    "static/js/787.af7cabaf.chunk.js": "/static/js/787.af7cabaf.chunk.js",
+    "main.css": "/static/css/main.f65dc160.css",
+    "main.js": "/static/js/main.113aa9f1.js",
+    "static/media/undraw_empty_re_opql.svg": "/static/media/undraw_empty_re_opql.b0a5632c3df684add1e9be68bbbc6a41.svg",
+    "static/media/nasa-logo.svg": "/static/media/nasa-logo.9f9d869c5ce8e749e9f2ebfa2c61114e.svg",
+    "static/media/undraw_void_-3-ggu.svg": "/static/media/undraw_void_-3-ggu.6fbd8a2c162c7edde804f50024c19093.svg",
+    "static/media/loader.svg": "/static/media/loader.f038f7defda68310cde5a9b98dd26a22.svg",
+    "static/media/background.svg": "/static/media/background.98d52cfecf3a07694543.svg",
     "index.html": "/index.html",
-    "main.fa364525.css.map": "/static/css/main.fa364525.css.map",
-    "main.9a96cb9c.js.map": "/static/js/main.9a96cb9c.js.map",
-    "787.af7cabaf.chunk.js.map": "/static/js/787.af7cabaf.chunk.js.map"
+    "main.f65dc160.css.map": "/static/css/main.f65dc160.css.map",
+    "main.113aa9f1.js.map": "/static/js/main.113aa9f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.fa364525.css",
-    "static/js/main.9a96cb9c.js"
+    "static/css/main.f65dc160.css",
+    "static/js/main.113aa9f1.js"
   ]
 }
