@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
-
-body {
+:root {
+  /* --primary: #5800ff; */
+  --primary: #0160aa;
+  --secondary: #bebebe;
+}
+* {
   font-family: "Righteous", cursive;
-
+}
+body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   background-color: #222222;
@@ -13,7 +18,7 @@ body::-webkit-scrollbar {
 }
 .app {
   /* color: #d14f4f; */
-  color: #5800FF;
+  color: var(--primary);
   line-height: 1.7;
   font-size: 19px;
 }
@@ -24,23 +29,22 @@ body::-webkit-scrollbar {
 }
 
 .link {
-  color: #ffffff;
+  color: var(--secondary);
   display: inline-block;
   padding: 3px 20px;
   font-size: 16px;
   text-decoration: none;
   transition: 0.3s ease all;
 }
-
 .link:hover {
-  color: #5800FF;
+  color: var(--primary);
   transform: scale(1.1);
 }
 
 .nasa-photo {
   display: flex;
-  padding: 40px;
-  /* margin: 0 auto; */
+  padding: 20px;
+  margin: 0 auto;
   align-items: center;
   justify-content: center;
   max-height: 100%;
@@ -81,29 +85,38 @@ body::-webkit-scrollbar {
 
 .home {
   display: flex;
-  height: 100vh;
+  width: 100%;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 
 .home-link {
   font-size: 40px;
-  background: #5800FF;
-  display: inline-block;
-  margin: 0px 20px;
-  padding: 40px 80px;
+  background: var(--primary);
+  /* display: inline-block; */
+  margin: 10px 20px;
+  padding: 40px 10px;
   color: rgba(22, 22, 22, 0.8);
   border-radius: 50px;
   text-decoration: none;
   transition: 0.3s ease all;
   text-transform: capitalize;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (max-width: 600px) {
+  .home-link{
+    width: 90%;
+  }
 }
 
 .home-link:hover {
-  border-radius: 5px;
-  background: #36009b;
+  background: #004479;
 }
 .photo {
   border-radius: 20px;
@@ -122,14 +135,226 @@ body::-webkit-scrollbar {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-play-state: running;
+  width: 100%;
 }
-input[type="date"]{
+input[type="date"] {
   background-color: transparent;
   border-radius: 5px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
   cursor: pointer;
+  width: 150px;
 }
 ::-webkit-calendar-picker-indicator {
   filter: invert(1);
+}
+#nasaLink {
+  color: var(--primary);
+}
+.listboxHeader {
+  transition: 1s height ease;
+}
+input[type="number"] {
+  color: var(--secondary);
+  border: none;
+  background-color: #222222;
+  padding: 10px 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+input[type="number"]:focus {
+  outline: none;
+}
+.options {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  gap: 20px;
+}
+.listboxHeader {
+  width: 150px;
+}
+.solCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid var(--secondary);
+  background-color: #222222;
+  border-radius: 10px;
+  width: 100px;
+}
+.solCont label {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .options {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+  }
+  .listboxHeader {
+    width: 100%;
+  }
+  .solCont {
+    width: 90%;
+  }
+  input[type="date"] {
+    width: 100%;
+  }
+}
+.page-not-found {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.page-not-found svg {
+  width: 200px;
+  height: 200px;
+}
+
+.mars-rover-photos {
+  width: 100%;
+  display: flex;
+  margin: 30px 0px;
+  border-radius: 50px;
+}
+.mars-rover-photos div * {
+  margin: 0px;
+}
+
+.mars-rover-photos div .rover-info {
+  margin-left: 20px;
+}
+.mars-rover-photos #image {
+  width: 50%;
+  margin-right: 10px;
+  object-fit: contain;
+  max-height: 80vh;
+  border-radius: 50px;
+}
+@media screen and (max-width: 600px) {
+  .mars-rover-photos {
+    display: flex;
+    flex-direction: column;
+  }
+  .mars-rover-photos #image {
+    width: 100%;
+  }
+  .mars-rover-photos .info {
+    width: 100%;
+  }
+}
+.header {
+  margin: 0;
+  text-align: center;
+  padding: 10px 0px;
+}
+main {
+  padding: 0px 10px;
+}
+.home-header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.home-header h1{
+  margin: 0px;
+  padding-bottom: 20px;
+}
+#search{
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  width: 300px;
+}
+#search:focus{
+  outline: none;
+}
+#IAVL-main{
+  display: block;
+  width: 100%;
+}
+.IAVL{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.iavl-info{
+  width: 50%;
+  padding-left: 20px;
+  height: 100%;
+  text-align: center;
+}
+.iavl-info h1{
+  margin: 0px;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+@media screen and (max-width: 600px){
+  .iavl-info{
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 0px;
+  }
+}
+.IAVL-submit{
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s ease;
+}
+.IAVL-submit:hover{
+  cursor: pointer;
+  color: var(--primary);
+}
+#iavl-image{
+  border-radius: 20px;
+  width: 40%;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  #iavl-image{
+    width: 100%;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #222222;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#filetypenotsupported{
+  width: 30%;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  #filetypenotsupported{
+    width: 80%;
+    height: 50%;
+  }
 }

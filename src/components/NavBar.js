@@ -1,21 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function NavBar({ startDate, setStartDate }) {
+export default function NavBar() {
   return (
     <div className="navbar">
       <ul>
-        <i className="fas fa-home"></i>
         <Link className="link" to="/">
-          Take me home
+          <i className="fas fa-home"></i>
+          Go Back Home
         </Link>
-        <input
-          value={startDate}
-          type="date"
-          onChange={(event) => {
-            setStartDate(event.target.value);
-          }}
-        />
       </ul>
     </div>
   );

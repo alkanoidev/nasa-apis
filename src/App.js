@@ -1,7 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import NasaPhoto from "./components/NasaPhoto";
+import Home from "./pages/Home";
+import NasaPhoto from "./pages/NasaPhoto";
+import MarsRoverPhotos from "./pages/MarsRoverPhotos";
+import IAVLibrary from "./pages/IAVLibrary";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
         <Routes>
           <Route element={<Home />} path="/" exact />
           <Route element={<NasaPhoto />} path="/nasaphoto" />
+          <Route element={<MarsRoverPhotos />} path="/marsroverphotos" />
+          <Route element={<IAVLibrary />} path="/imageandvideolibrary" />
         </Routes>
       </div>
     </BrowserRouter>

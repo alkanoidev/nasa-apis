@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "./NavBar";
-import { ReactComponent as Loader } from "./loader.svg";
+import NavBar from "../components/NavBar";
+import { ReactComponent as Loader } from "../components/loader.svg";
+import DatePicker from "../components/Date";
+import { useDate } from "../components/Date";
 
 const formatDate = (date) => {
   let d = new Date(date),
@@ -16,7 +18,7 @@ const formatDate = (date) => {
 
 export default function NasaPhoto() {
   const [photoData, setPhotoData] = useState(null);
-  const [startDate, setStartDate] = useState(formatDate(new Date()));
+  const [queryDate, setQueryDate] = useDate(formatDate(new Date()));
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -24,32 +26,28 @@ export default function NasaPhoto() {
     fetchPhoto();
 
     async function fetchPhoto() {
-      setStartDate(formatDate(startDate));
-      if (startDate > formatDate(new Date())) {
-        setStartDate(formatDate(new Date()));
+      setQueryDate(formatDate(queryDate));
+      if (queryDate > formatDate(new Date())) {
+        setQueryDate(formatDate(new Date()));
         return;
       }
-      // const res = await fetch(
-      //   `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${startDate}`
-      // );
-      fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${startDate}`
+      await fetch(
+        `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${queryDate}`
       )
         .then((res) => res.json())
         .then((data) => {
           setPhotoData(data);
           setLoading(false);
         });
-      // const data = await res.json();
-      // setPhotoData(data);
     }
-  }, [startDate]);
+  }, [queryDate]);
 
   if (!photoData) return <div />;
 
   return (
     <>
-      <NavBar startDate={startDate} setStartDate={setStartDate} />
+      <NavBar />
+      <h1 className="header">Picture Of Day</h1>
       <div className="nasa-photo">
         {loading ? (
           <Loader id="svg" />
@@ -74,6 +72,7 @@ export default function NasaPhoto() {
             )}
 
             <div>
+              <DatePicker queryDate={queryDate} setQueryDate={setQueryDate} />
               <h1>{photoData.title}</h1>
               <p className="date">{photoData.date}</p>
               <p className="explanation">{photoData.explanation}</p>
