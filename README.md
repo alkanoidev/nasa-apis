@@ -12,7 +12,7 @@
 - Images are separated into easily navigatable pages.
 ### NASA Image and Video Library:
 - Search for keywords from NASAs Image And Video Library.
-- Enter for submitting the search input is supported.
+- Pressing Enter key for submitting the search input is supported.
 - Navigate between pages.
 
 ## Tech:
