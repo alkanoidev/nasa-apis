@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import { ReactComponent as Loader } from "../components/loader.svg";
 import DatePicker from "../components/Date";
 import { useDate } from "../components/Date";
+import { motion } from "framer-motion";
 
 const formatDate = (date) => {
   let d = new Date(date),
@@ -53,30 +54,35 @@ export default function NasaPhoto() {
           <Loader id="svg" />
         ) : (
           <>
-            {photoData.media_type === "image" ? (
-              <img
-                src={photoData.url}
-                alt={photoData.title}
-                className="photo"
-              />
-            ) : (
-              <iframe
-                title="space-video"
-                src={photoData.url}
-                frameBorder="0"
-                gesture="media"
-                allow="encrypted-media"
-                allowFullScreen
-                className="photo"
-              />
-            )}
+            <motion.div
+              initial={{opacity: 0}, {y: "-300px"} }
+              animate={{opacity: 1}, {y: 0}}
+            >
+              {photoData.media_type === "image" ? (
+                <img
+                  src={photoData.url}
+                  alt={photoData.title}
+                  className="photo"
+                />
+              ) : (
+                <iframe
+                  title="space-video"
+                  src={photoData.url}
+                  frameBorder="0"
+                  gesture="media"
+                  allow="encrypted-media"
+                  allowFullScreen
+                  className="photo"
+                />
+              )}
 
-            <div>
-              <DatePicker queryDate={queryDate} setQueryDate={setQueryDate} />
-              <h1>{photoData.title}</h1>
-              <p className="date">{photoData.date}</p>
-              <p className="explanation">{photoData.explanation}</p>
-            </div>
+              <div>
+                <DatePicker queryDate={queryDate} setQueryDate={setQueryDate} />
+                <h1>{photoData.title}</h1>
+                <p className="date">{photoData.date}</p>
+                <p className="explanation">{photoData.explanation}</p>
+              </div>
+            </motion.div>
           </>
         )}
       </div>

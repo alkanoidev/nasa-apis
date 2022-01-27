@@ -19,6 +19,7 @@
 - Reactjs
 - React-Router
 - Styled-Components
+- Framer Motion
 - React-Icons
 - Fetch API
 - Async/Await

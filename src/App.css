@@ -95,8 +95,7 @@ body::-webkit-scrollbar {
 .home-link {
   font-size: 40px;
   background: var(--primary);
-  /* display: inline-block; */
-  margin: 10px 20px;
+  margin: 10px 0px;
   padding: 40px 10px;
   color: rgba(22, 22, 22, 0.8);
   border-radius: 50px;
@@ -112,6 +111,7 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 600px) {
   .home-link{
     width: 90%;
+    font-size: 2rem;
   }
 }
 
@@ -289,8 +289,8 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
   flex-direction: column;
+  padding: 0px 20px;
 }
 .iavl-info{
   width: 50%;

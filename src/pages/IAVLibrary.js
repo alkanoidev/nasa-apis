@@ -5,6 +5,7 @@ import Search from "../components/Search";
 import PagePicker from "../components/PagePicker";
 import styled from "styled-components";
 import { ReactComponent as FileTypeNotSupported } from "../components/undraw_void_-3-ggu.svg";
+import { motion } from "framer-motion";
 
 export default function IAVLibrary() {
   const [page, setPage] = useState(1);
@@ -87,21 +88,32 @@ function ImageOrVideo({
   resources,
 }) {
   return (
-    <Container>
-      {hasLinks && links[0].render === "image" ? (
-        <img src={links[0].href} alt={title} id="iavl-image" />
-      ) : (
-        <FileTypeNotSupported id="filetypenotsupported" />
-      )}
+    <motion.div
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    transition={{ duration: 0.3 }}
+    variants={{
+      visible: { opacity: 1, scale: 1 },
+      hidden: { opacity: 0, scale: 0.5 }
+    }}
+    >
+      <Container>
+        {hasLinks && links[0].render === "image" ? (
+          <img src={links[0].href} alt={title} id="iavl-image" />
+        ) : (
+          <FileTypeNotSupported id="filetypenotsupported" />
+        )}
 
-      <div className="iavl-info">
-        <h1>{title}</h1>
-        <p>Date Created: {dateCreated}</p>
-        <Paragraph id="iavl-description">{description}</Paragraph>
-        <p>
-          All resources <a href={resources}>here</a>
-        </p>
-      </div>
-    </Container>
+        <div className="iavl-info">
+          <h1>{title}</h1>
+          <p>Date Created: {dateCreated}</p>
+          <Paragraph id="iavl-description">{description}</Paragraph>
+          <p>
+            All resources <a href={resources}>here</a>
+          </p>
+        </div>
+      </Container>
+    </motion.div>
   );
 }
