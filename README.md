@@ -36,10 +36,10 @@ Explore NASA apis such as Picture Of the Day, Mars Rover Photos and NASA Image a
 ### 🖼 Screenshots:
 
 
-![failed to load](https://github.com/alkanoidev/nasa-apis/blob/master/page1.jpeg)
-![failed to load](https://github.com/alkanoidev/nasa-apis/blob/master/page2.jpeg)
-![failed to load](https://github.com/alkanoidev/nasa-apis/blob/master/page3.jpeg)
-![failed to load](https://github.com/alkanoidev/nasa-apis/blob/master/page4.jpeg)
+![failed to load](https://raw.githubusercontent.com/alkanoidev/nasa-apis/master/page1.jpeg)
+![failed to load](https://raw.githubusercontent.com/alkanoidev/nasa-apis/master/page2.jpeg)
+![failed to load](https://raw.githubusercontent.com/alkanoidev/nasa-apis/master/page3.jpeg)
+![failed to load](https://raw.githubusercontent.com/alkanoidev/nasa-apis/master/page4.jpeg)
 
 
 ### ⚙ Install
