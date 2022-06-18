@@ -58,5 +58,5 @@ npm start
 
 **Filip Ivanovic**
 
-- Website: TODO: add portfolio
+- Website: [https://filipivanovic.netlify.app/](https://filipivanovic.netlify.app/)
 - Github: [@alkanoidev](https://github.com/alkanoidev)
