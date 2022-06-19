@@ -25,13 +25,16 @@ Explore NASA apis such as Picture Of the Day, Mars Rover Photos and NASA Image a
 
 ### 🛠 Tech Stack:
 
-- Reactjs
-- React-Router
-- Styled-Components
-- Framer Motion
-- React-Icons
-- Fetch API
-- Async/Await
+| Frontend          | 
+| ---------------   | 
+| Reactjs           | 
+| React-Router      | 
+| Styled-Components | 
+| Framer Motion     |
+| React-Icons       |         
+| Framer-Motion     |         
+| Fetch API         |
+| Async/Await       |
 
 ### 🖼 Screenshots:
 
