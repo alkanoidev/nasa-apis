@@ -76,7 +76,7 @@ export default function MarsRoverPhotos() {
             </div>
           </div>
           <PagePicker page={page} setPage={setPage} />
-          <main>
+          <main className="mars-rover-photo-main">
             {apiData.length == 0 && (
               <div className="page-not-found">
                 <PageNotFound />

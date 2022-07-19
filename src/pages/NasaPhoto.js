@@ -48,21 +48,23 @@ export default function NasaPhoto() {
   return (
     <>
       <NavBar />
-      <h1 className="header">Picture Of Day</h1>
+      <h1 className="header">Picture Of The Day</h1>
       <div className="nasa-photo">
         {loading ? (
           <Loader id="svg" />
         ) : (
           <>
             <motion.div
-              initial={{opacity: 0}, {y: "-300px"} }
-              animate={{opacity: 1}, {y: 0}}
+              initial={{ opacity: 0, y: "-300px" }}
+              animate={{ opacity: 1, y: 0 }}
+              className="content"
             >
               {photoData.media_type === "image" ? (
                 <img
                   src={photoData.url}
                   alt={photoData.title}
                   className="photo"
+                  loading="lazy"
                 />
               ) : (
                 <iframe
@@ -73,10 +75,11 @@ export default function NasaPhoto() {
                   allow="encrypted-media"
                   allowFullScreen
                   className="photo"
+                  loading="lazy"
                 />
               )}
 
-              <div>
+              <div id="nasa-photo-text">
                 <DatePicker queryDate={queryDate} setQueryDate={setQueryDate} />
                 <h1>{photoData.title}</h1>
                 <p className="date">{photoData.date}</p>

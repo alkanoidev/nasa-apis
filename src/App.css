@@ -13,9 +13,6 @@ body {
   background-color: #222222;
   background-image: url("background.svg");
 }
-body::-webkit-scrollbar {
-  display: none;
-}
 .app {
   /* color: #d14f4f; */
   color: var(--primary);
@@ -42,19 +39,24 @@ body::-webkit-scrollbar {
 }
 
 .nasa-photo {
-  display: flex;
   padding: 20px;
-  margin: 0 auto;
-  align-items: center;
+}
+
+.nasa-photo .content {
+  width: 100%;
   justify-content: center;
-  max-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#nasa-photo-text {
+  width: 50%;
 }
 
 .nasa-photo img {
-  width: 50%;
-  margin-right: 50px;
+  max-height: 60vh;
   object-fit: contain;
-  max-height: 80vh;
 }
 
 .nasa-photo h1 {
@@ -109,7 +111,7 @@ body::-webkit-scrollbar {
   gap: 10px;
 }
 @media screen and (max-width: 600px) {
-  .home-link{
+  .home-link {
     width: 90%;
     font-size: 2rem;
   }
@@ -192,6 +194,20 @@ input[type="number"]:focus {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 1024px) {
+  #nasa-photo-text {
+    width: 50%;
+  }
+  .nasa-photo .content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .nasa-photo img {
+    width: 50%;
+    object-fit: contain;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .options {
     flex-direction: column;
@@ -206,6 +222,15 @@ input[type="number"]:focus {
   }
   input[type="date"] {
     width: 100%;
+  }
+  #nasa-photo-text {
+    width: 100%;
+  }
+  .nasa-photo img {
+    width: 100%;
+  }
+  .nasa-photo .content {
+    flex-wrap: wrap;
   }
 }
 .page-not-found {
@@ -224,8 +249,14 @@ input[type="number"]:focus {
 .mars-rover-photos {
   width: 100%;
   display: flex;
+  justify-content: center;
   margin: 30px 0px;
   border-radius: 50px;
+}
+.mars-rover-photo-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .mars-rover-photos div * {
   margin: 0px;
@@ -235,10 +266,9 @@ input[type="number"]:focus {
   margin-left: 20px;
 }
 .mars-rover-photos #image {
-  width: 50%;
+  width: 400px;
   margin-right: 10px;
   object-fit: contain;
-  max-height: 80vh;
   border-radius: 50px;
 }
 @media screen and (max-width: 600px) {
@@ -261,30 +291,30 @@ input[type="number"]:focus {
 main {
   padding: 0px 10px;
 }
-.home-header{
+.home-header {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.home-header h1{
+.home-header h1 {
   margin: 0px;
   padding-bottom: 20px;
 }
-#search{
+#search {
   background-color: transparent;
   border: none;
   color: #ffffff;
   font-size: 16px;
   width: 300px;
 }
-#search:focus{
+#search:focus {
   outline: none;
 }
-#IAVL-main{
+#IAVL-main {
   display: block;
   width: 100%;
 }
-.IAVL{
+.IAVL {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -292,26 +322,26 @@ main {
   flex-direction: column;
   padding: 0px 20px;
 }
-.iavl-info{
+.iavl-info {
   width: 50%;
   padding-left: 20px;
   height: 100%;
   text-align: center;
 }
-.iavl-info h1{
+.iavl-info h1 {
   margin: 0px;
   text-align: center;
   width: 100%;
   max-width: 100%;
 }
-@media screen and (max-width: 600px){
-  .iavl-info{
+@media screen and (max-width: 600px) {
+  .iavl-info {
     width: 100%;
     padding-top: 20px;
     padding-left: 0px;
   }
 }
-.IAVL-submit{
+.IAVL-submit {
   background-color: transparent;
   border: none;
   color: #ffffff;
@@ -321,17 +351,18 @@ main {
   align-items: center;
   transition: 0.2s ease;
 }
-.IAVL-submit:hover{
+.IAVL-submit:hover {
   cursor: pointer;
   color: var(--primary);
 }
-#iavl-image{
-  border-radius: 20px;
-  width: 40%;
-  height: 100%;
+#iavl-image {
+  width: 400px;
+  margin-right: 10px;
+  object-fit: contain;
+  border-radius: 50px;
 }
 @media screen and (max-width: 600px) {
-  #iavl-image{
+  #iavl-image {
     width: 100%;
   }
 }
@@ -346,14 +377,14 @@ main {
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background-color: #003e6d;
 }
-#filetypenotsupported{
+#filetypenotsupported {
   width: 30%;
   height: 100%;
 }
 @media screen and (max-width: 600px) {
-  #filetypenotsupported{
+  #filetypenotsupported {
     width: 80%;
     height: 50%;
   }
