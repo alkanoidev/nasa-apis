@@ -44,19 +44,6 @@ Explore NASA apis such as Picture Of the Day, Mars Rover Photos and NASA Image a
 ![failed to load](https://raw.githubusercontent.com/alkanoidev/nasa-apis/master/page3.jpeg)
 ![failed to load](https://raw.githubusercontent.com/alkanoidev/nasa-apis/master/page4.jpeg)
 
-
-### ⚙ Install
-
-```sh
-npm install
-```
-
-### ⚙ Usage
-
-```sh
-npm start
-```
-
 ### Author 👋
 
 **Filip Ivanovic**
